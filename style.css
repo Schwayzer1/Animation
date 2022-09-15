@@ -1,28 +1,69 @@
+/*****  GAME ANIMATION ******/
+
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
-  font-family: "Press Start 2P", cursive;
-  color: white;
-  background-color: #2d3436;
-}
-
-.secret-number {
-  font-size: 2rem;
-  border: 4px solid white;
+  height: 100vh;
+  background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 1.5rem;
-  margin: 1rem auto;
-  max-width: 250px;
+  align-items: center;
+}
+.bg-image {
+  background-image: url(img/Img_1.png);
+  background-size: cover;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  width: 80vw;
+  height: 700px;
+  position: relative;
+  overflow-x: hidden;
+}
+.ground {
+  height: 150px;
+  width: 50000%;
+  background-image: url(./img/Img_02.png);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-repeat: repeat-x;
+  /* animation: right 5s linear infinite; */
 }
 
-.secret-number,
-.guess-input,
-.btn {
-  font-size: 1.6rem;
+.car {
+  position: absolute;
+  bottom: 55px;
+  left: 20%;
+  /* animation: pop-up 1s linear infinite; */
+}
+
+/** animation */
+
+@keyframes right {
+  100% {
+    transform: translate(-2000px);
+  }
+}
+
+@keyframes pop-up {
+  0% {
+    transform: translateY(-1px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(1px);
+  }
+}
+
+.right {
+  animation: right 5s linear infinite;
+}
+
+.pop-up {
+  animation: pop-up 1s linear infinite;
 }
